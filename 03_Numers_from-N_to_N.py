@@ -2,7 +2,7 @@
 
 N = int(input('Введите число: '))
 
-def Show_numbers(N):
+def get_numbers(N):
     return [i for i in range(-N, N + 1)]
   
-print(Show_numbers(N))
+print(get_numbers(N))
