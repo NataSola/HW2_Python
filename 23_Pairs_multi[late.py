@@ -7,16 +7,8 @@ import math
 def get_numbers(n, frst, last):
     return [randint(frst, last) for i in range(n)]
 
-
-def multiplate_pairs(mylist):
-    mults = []
-    i = 0
-    j = -1
-    while i < math.ceil(len(mylist) / 2):
-        mults.append(mylist[i] * mylist[j])
-        i += 1
-        j -= 1
-    return mults
+def mult_pairs(mylist):
+    return [mylist[i] * mylist[-i - 1] for i in range(math.ceil(len(mylist)/2))]
 
 n = 7
 frst = 1
@@ -25,6 +17,7 @@ last = 10
 mylist = get_numbers(n, frst, last)
 print(mylist)
 print(multiplate_pairs(mylist))
+print(mult_pairs(mylist))
 
 
 # Второй способ:
