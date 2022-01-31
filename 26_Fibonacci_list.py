@@ -4,17 +4,17 @@
 n = int(input('Введите число: '))
 
 def get_fibonacci(n):
-    fibo_pos = []
-    fibo_neg = []
-    a, b = 0, 1
-    for i in range(n):
-        fibo_pos.append(a)
+    fibo_nums = []
+    # fibo_neg = []
+    a, b = 1, 1
+    for i in range(n-1):
+        fibo_nums.append(a)
         a, b = b, a + b
     a, b = 0, 1
     for i in range (n):
-        fibo_neg.insert(0, a)
+        fibo_nums.insert(0, a)
         a, b = b, a - b
-    return fibo_neg + fibo_pos[1::]
+    return fibo_nums
 
 fibo_nums = get_fibonacci(n)
 print(get_fibonacci(n))
