@@ -5,7 +5,6 @@ n = int(input('Введите число: '))
 
 def get_fibonacci(n):
     fibo_nums = []
-    # fibo_neg = []
     a, b = 1, 1
     for i in range(n-1):
         fibo_nums.append(a)
