@@ -37,3 +37,7 @@
     >>> words = ["one", "two", "one", "three", "one"]
     >>> len(set(words))
     3
+
+    
+## Перевернуть строку:
+    >>> str = str[::-1]
