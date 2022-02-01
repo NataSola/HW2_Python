@@ -16,7 +16,6 @@ last = 10
 
 mylist = get_numbers(n, frst, last)
 print(mylist)
-print(multiplate_pairs(mylist))
 print(mult_pairs(mylist))
 
 

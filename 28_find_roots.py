@@ -1,6 +1,6 @@
 # 28. Найти корни квадратного уравнения Ax² + Bx + C = 0
 #     - Математикой
-#     - Используя дополнительные библиотеки
+#     - Используя дополнительные библиотеки*
 
 import math
 
@@ -15,9 +15,10 @@ def find_roots(a, b, c):
         roots.append('Нет корней')
         return roots
     x1 = (-b + math.sqrt(D)) / 2*a
-    x2 = (-b - math.sqrt(D)) / 2*a
     roots.append(x1)
-    if D > 0: roots.append(x2)
+    if D > 0: 
+        x2 = (-b - math.sqrt(D)) / 2*a
+        roots.append(x2)
     return roots   
 
 print(find_roots(a, b, c))
