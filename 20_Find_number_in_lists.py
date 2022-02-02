@@ -3,28 +3,30 @@
 from random import randint
 import itertools
 
+n = 7
+    
+mylist = ['jh', 'sdhfogf', 'kjahsd', '24', 'dpo', '7']
 
-# def get_list(raw, col, frst, last):
-#     return [[randint(frst, last) for j in range(col)] for i in range (raw)]
+def find_number(n, lst):
+    return str(n) in lst
 
-# def find_number(n, mylist):
-#     return n in list(itertools.chain(*mylist))
+print(find_number(n, mylist))
 
-# raw = 3
-# col = 3
-# frst = 1
-# last = 100
 
-# mylist = get_list(raw, col, frst, last)
+# Нахождение числа во вложенном списке
 
-# print(mylist)
+def get_list(raw, col, frst, last):
+    return [[randint(frst, last) for j in range(col)] for i in range (raw)]
 
-# n = int(input('Введите число: '))
-# print(find_number(n, mylist))
+def find_number(n, mylist):
+    return n in list(itertools.chain(*mylist))
 
-lst = ['sa', 'sdl5' '82', '0dm', '4jf', '59']
+raw = 3
+col = 3
+frst = 1
+last = 100
+mylist = get_list(raw, col, frst, last)
 
-def find_num(num, lst):
-    return str(num) in lst(itertools.chain(*lst))
-
-print(find_num(5, lst))
+print(mylist)
+n = int(input(('Введите число: ')))
+print(find_number(n, mylist))
