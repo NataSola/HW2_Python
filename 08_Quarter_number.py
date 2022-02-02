@@ -18,5 +18,5 @@ def get_quarter_number (x, y):
         if x == 0: return 'OY'
         else: return 'OX'
     
-print (f'Точка {x, y}')
-print (get_quarter_number(x, y))
+print (f'Точка: {x, y}')
+print (f'Четверть: {get_quarter_number(x, y)}')
