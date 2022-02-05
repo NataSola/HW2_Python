@@ -2,10 +2,10 @@
 # (значения от 0 до 100) многочлена и записать в файл многочлен степени k.    
 #     *Пример: k=2 => 2*x² + 4*x + 5 = 0 или x² + 5 = 0 или 10*x²
 
-from random import choice, randint
+from random import randint
 import itertools
 
-k = 4
+k = 3
 
 ratios = [randint(0, 10) for i in range (k + 1)]
 # ratios = [5, 0, 1, 8, 0]
@@ -15,9 +15,9 @@ def get_polinom(k, rat):
     degrees = ['^'] * (k - 1)
     n = [n for n in range(k, 1, -1)]    # список степеней в обратном порядке от большего до 2
     additions = [' + '] * k
-    rat = list(map(str, rat))       # преоразование чисел (списоккоэффициентов) в строковые значения
+    rat = list(map(str, rat))       # преобразование чисел (список коэффициентов) в строковые значения
     pol = list(itertools.zip_longest(rat, prods, degrees, n, additions, fillvalue=''))  # собираем члены многочлена в виде кортежей
-    pol = [x for x in pol if x[0] != '0']      # удаляем эелементы (кортежи) с коэффиционтом 0
+    pol = [x for x in pol if x[0] != '0']      # оставляем элементы (кортежи), коэффициент != 0
     pol = [list(x) for x in pol]        # преобразуем кортежи в списки  
     for x in pol[0:-1]:
         if x[0] == '1': del x[0]
