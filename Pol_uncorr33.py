@@ -4,7 +4,6 @@
 from dataclasses import replace
 from random import randint, choice
 
-
 pp = '2*х^2 + 5*х + 33 = 0'
 pol = ['2','*x^','2',' + ', '5', '*x + ','33',' = 0']
 
@@ -35,6 +34,5 @@ print(new_pol)
 
 with open('33_Polynomial.txt', 'w') as data:
     data.write(pol_new)
-
 
 # print(list(enumerate(pol)))
