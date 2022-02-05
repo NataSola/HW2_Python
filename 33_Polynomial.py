@@ -5,9 +5,12 @@
 from random import randint
 import itertools
 
-k = 3
+k = 5
 
 ratios = [randint(0, 10) for i in range (k + 1)]
+while ratios[0] == 0:
+    ratios[0] = randint(1, 10) 
+
 # ratios = [5, 0, 1, 8, 0]
 
 def get_polinom(k, rat):
@@ -28,6 +31,7 @@ def get_polinom(k, rat):
     return "".join(map(str, pol))   # преобразование списка в строку
 
 
+# ratios = get_ratios(k)
 polynom = get_polinom(k,ratios)
 print(polynom)
 
