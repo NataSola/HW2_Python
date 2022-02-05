@@ -32,7 +32,7 @@ def change_polynomial(pol, k, rat, ind):
 new_pol = change_polynomial(pol, k, ratios, indexes)
 print(new_pol)
 
-with open('33_Polynomial.txt', 'w') as data:
+with open('pol_uncorr33.txt', 'w') as data:
     data.write(pol_new)
 
 # print(list(enumerate(pol)))
