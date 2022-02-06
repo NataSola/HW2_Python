@@ -10,7 +10,7 @@ def get_numbers(n, frst, last):
 def mult_pairs(mylist):
     return [mylist[i] * mylist[-i - 1] for i in range(math.ceil(len(mylist)/2))]
 
-n = 7
+n = 9
 frst = 1
 last = 10
 
