@@ -5,10 +5,23 @@
 
 nums = [1, 5, 2, 3, 4, 6, 1, 7]
 
+def get_up2(nums):
+    ups = [0]
+    for i in nums:
+        if i > max(ups):
+            ups.append(i)
+    del ups[0]
+    return ups
+
+print(get_up2(nums))
+
+
+# Предыдущий вариант
+
 def get_up(nums):
     ups = []
     for i in range(len(nums) - 1):
-        if nums[i] == max(nums[0:i+1]):
+        if nums[i] == max(nums[:i+1:]):
             ups.append(nums[i])
     return ups
 
