@@ -1,11 +1,9 @@
-import math
-from math import pi
+field = range (1, 10)
 
-n = pi
-print(n)
+def draw_field(field):
+    print('-------------')
+    for i in range(3):
+        print('|', field[0+i*3], '|', field[1+i*3], '|', field[2+i*3], '|')
+        print('-------------')
 
-n=20000000
-
-mypi =4* (sum(1/x for x in range (1, n + 1,4) ) + sum(-1/x for x in range (3, n + 1, 4)))
-
-print(format(mypi,'.100'))
+draw_field(field)
