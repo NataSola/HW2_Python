@@ -1,3 +1,5 @@
+from functools import reduce
+
 field = range (1, 10)
 
 def draw_field(field):
@@ -7,3 +9,14 @@ def draw_field(field):
         print('-------------')
 
 draw_field(field)
+
+
+
+
+from functools import reduce
+
+d = [1, 2, 3, 4, 5]
+
+pr = reduce(lambda x, y: x*y, d)
+print (pr)
+

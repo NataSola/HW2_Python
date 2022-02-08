@@ -16,3 +16,9 @@ pol = list(zip(ratios, n))
 
 print (n)
 print(pol)
+
+###################
+# Вторая задача
+
+
+
