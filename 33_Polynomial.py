@@ -5,11 +5,13 @@
 from random import randint
 import itertools
 
-k = randint(2, 5)
+k = randint(2, 7)
 
-ratios = [randint(0, 10) for i in range (k + 1)]
-while ratios[0] == 0:
-    ratios[0] = randint(1, 10) 
+def get_ratios(k):
+    ratios = [randint(0, 10) for i in range (k + 1)]
+    while ratios[0] == 0:
+        ratios[0] = randint(1, 10) 
+    return ratios
 
 def get_polinom(k, rat):
     prods = ['*x'] * k  
@@ -25,7 +27,9 @@ def get_polinom(k, rat):
     pol = list(itertools.chain(*pol))  
     return "".join(map(str, pol))   
 
-polynom1 = get_polinom(k,ratios)
+
+ratios = get_ratios(k)
+polynom1 = get_polinom(k, ratios)
 print(polynom1)
 
 with open('33_Polynomial.txt', 'w') as data:
@@ -36,11 +40,8 @@ with open('33_Polynomial.txt', 'w') as data:
 
 k = randint(2, 5)
 
-ratios = [randint(0, 10) for i in range (k + 1)]
-while ratios[0] == 0:
-    ratios[0] = randint(1, 10) 
-
-polynom2 = get_polinom(k,ratios)
+ratios = get_ratios(k) 
+polynom2 = get_polinom(k, ratios)
 print(polynom2)
 
 with open('33_Polynomial2.txt', 'w') as data:
