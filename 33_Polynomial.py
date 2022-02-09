@@ -25,6 +25,7 @@ def get_polinom(k, rat):
         x.append(' + ')
     pol.append([' = 0'])
     pol = list(itertools.chain(*pol))  
+    print(pol)
     return "".join(map(str, pol))   
 
 
