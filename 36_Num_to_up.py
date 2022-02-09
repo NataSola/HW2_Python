@@ -3,25 +3,25 @@
 # *Пример: [1, 5, 2, 3, 4, 6, 1, 7] => [1, 2, 3] или [1, 7] или [1, 6, 7] и т.д.*
 # ***Порядок элементов менять нельзя***
 
-nums = [1, 5, 2, 3, 4, 6, 1, 7]
+nums = [3, 1, 2, 3, 4, 6, 1, 7]
+
+# Первый вариант
 
 def get_up2(nums):
-    ups = [0]
+    ups = [nums[0]]
     for i in nums:
         if i > max(ups):
             ups.append(i)
-    del ups[0]
     return ups
-
+    
 print(get_up2(nums))
 
-
-# Предыдущий вариант
+# Второй вариант
 
 def get_up(nums):
     ups = []
-    for i in range(len(nums) - 1):
-        if nums[i] == max(nums[:i+1:]):
+    for i in range(len(nums)):
+        if nums[i] == max(nums[:i+1:]) and nums[i] not in ups:
             ups.append(nums[i])
     return ups
 
