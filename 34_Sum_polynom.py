@@ -7,6 +7,7 @@ import itertools
 
 file1 = '33_Polynomial.txt'
 file2 = '33_Polynomial2.txt'
+file_sum = '34_Sum_polynomials.txt'
 
 # Получение данных из файла
 
@@ -58,13 +59,18 @@ def get_sum_pol(pol):
     new_pol[-1] = ' = 0'
     return "".join(map(str, new_pol))
 
+def write_to_file(file, pol):
+    with open(file, 'w') as data:
+        data.write(pol)
+
 pol1 = read_pol(file1)
 pol2 = read_pol(file2)
-print(pol1)
-print(pol2)
-
 pol_1 = convert_pol(pol1)
 pol_2 = convert_pol(pol2)
 
 pol_sum = get_sum_pol(fold_pols(pol_1, pol_2))
+write_to_file(file_sum, pol_sum)
+
+print(pol1)
+print(pol2)
 print(pol_sum)
