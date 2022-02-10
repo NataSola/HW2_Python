@@ -13,24 +13,18 @@ def get_ratios(k):
         ratios[0] = randint(1, 10) 
     return ratios
 
-def get_polinom(k, rat):
-    prods = ['*x'] * k  
-    degrees = ['^'] * (k - 1)
-    n = [n for n in range(k, 1, -1)]    # список степеней в обратном порядке от большей до 2            
-    pol = list(itertools.zip_longest(map(str, rat), prods, degrees, n,  fillvalue=''))  # собираем члены многочлена в виде кортежей
-    pol = [list(x) for x in pol if x[0] != '0']      
-    for x in pol[0:-1]:
-        if x[0] == '1': del x[0]
-        if x[0] == '*x': x[0] = 'x'
+def get_polynomial(k, ratios):
+    var = ['*x^']*(k-1) + ['*x']
+    polynomial = [[a, b, c] for a, b, c  in itertools.zip_longest(ratios, var, range(k, 1, -1), fillvalue = '') if a !=0]
+    for x in polynomial:
         x.append(' + ')
-    pol.append([' = 0'])
-    pol = list(itertools.chain(*pol))  
-    print(pol)
-    return "".join(map(str, pol))   
+    polynomial = list(itertools.chain(*polynomial))
+    polynomial[-1] = ' = 0'
+    return "".join(map(str, polynomial)).replace(' 1*x',' x')
 
 
 ratios = get_ratios(k)
-polynom1 = get_polinom(k, ratios)
+polynom1 = get_polynomial(k, ratios)
 print(polynom1)
 
 with open('33_Polynomial.txt', 'w') as data:
@@ -42,7 +36,7 @@ with open('33_Polynomial.txt', 'w') as data:
 k = randint(2, 5)
 
 ratios = get_ratios(k) 
-polynom2 = get_polinom(k, ratios)
+polynom2 = get_polynomial(k, ratios)
 print(polynom2)
 
 with open('33_Polynomial2.txt', 'w') as data:
