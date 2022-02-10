@@ -6,6 +6,9 @@
 
 import random
 
+greeting = 'Здравствуйте! Вас приветствует игра Забери все конфеты!\
+            \Основные правила игры:'
+            
 player1 = input('Давайте познакомися. Первый игрок, как к Вам можно обращаться?\n')
 player2 = input('Второй игрок, и Вы представьтесь, пожалуйста\n')
 players = [player1, player2]
@@ -44,6 +47,6 @@ def play_game(n, m, players, messages):
     return players[not count%2]
 
 winer = play_game(n, m, players, messages)
-if winer == None:
+if not winer:
     print('У нас нет победителя.')
 else: print(f'Поздравляю! В этот раз победил {winer}! Ему достаются все конфеты!')
